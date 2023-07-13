@@ -48,6 +48,29 @@ window.onload = function () {
         header.classList.remove("active");
         mbt.classList.remove("active");
       }
+    } else {
+      this.classList.add("ani");
+      htmlRoot.classList.add("active");
+      navMb.classList.add("active");
+      header.classList.add("active");
+      mbt.classList.add("active");
+    }
+  });
+  // 반올림 처리
+  let winW = window.innerWidth;
+  window.addEventListener("resize", function () {
+    winW = window.innerWidth;
+    if (winW < 1024) {
+      mbt.classList.remove("ani");
+      htmlRoot.classList.remove("active");
+      navMb.classList.remove("active");
+      if (scy > 0) {
+        header.classList.add("active");
+        mbt.classList.add("active");
+      } else {
+        header.classList.remove("active");
+        mbt.classList.remove("active");
+      }
     }
   });
 };
