@@ -93,7 +93,27 @@
 
   <body>
     <!-- 안내창 -->
+    <div class="modal-wrap">
+      <div class="modal-main">
+        <span class="modal-logo">
+          <img src="images/logoModal.png" alt="" />
+        </span>
+        <p class="modal-notice">
+          해당 사이트는 스터디용으로 제작되었으며,<br />
+          리소스의 저작권은 원저작자에게 있습니다.<br />
+          * 본 사이트는 Chrome 에 최적화되어 있습니다.<br />
+          * 해당 사이트와 관련한 문제가 있으면
+          <a href="mailto:aaa@aaa.net">여기</a>
+          연락바랍니다.<br />
+        </p>
+        <button class="modal-close">닫기</button>
+      </div>
+    </div>
     <!-- gotop -->
+    <button class="gotop">
+      <i class="top__icon xi-long-arrow-up"></i>
+    </button>
+    <!-- 레이아웃 -->
     <div class="wrap">
       <!-- 상단 -->
       <header class="header">
@@ -365,11 +385,11 @@
         </div>
       </section>
       <!-- 하단 -->
-      <footer id="footer" class="footer">
+      <footer class="footer" id="footer">
         <div class="inner">
           <ul class="footer-list">
             <li>
-              <span>상호 : ㈜와이드모바일<em class="footer-bar"></em></span>
+              <span>상호 : ㈜와이드모바일 <em class="footer-bar"></em></span>
 
               <span
                 >통신판매업신고번호 : 제2018-서울서대문-0301호<em
@@ -381,7 +401,8 @@
             </li>
             <li>
               고객센터 : <a href="tel:000-0000">1566-9070</a> (운영시간
-              9:00~18:00, 주말/공휴일/점심 12:00~13:00 제외)
+              9:00~18:00, <br class="footer-br" />주말/공휴일/점심 12:00~13:00
+              제외)
             </li>
             <li><p>Copyright © WIDEMOBILE INC. Allright Reserved.</p></li>
           </ul>

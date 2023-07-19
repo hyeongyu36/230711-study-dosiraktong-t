@@ -1,4 +1,13 @@
 window.onload = function () {
+  // 모달창 기능
+  let modalWrap = document.querySelector(".modal-wrap");
+  let modalClose = document.querySelector(".modal-close");
+  modalClose.addEventListener("click", function () {
+    modalWrap.classList.add("fadeOut");
+    modalWrap.addEventListener("animationend", function () {
+      modalWrap.style.display = "none";
+    });
+  });
   // AOS셋팅
   AOS.init();
   // 상단 스크롤 기능
@@ -95,7 +104,7 @@ window.onload = function () {
   swSlidePgUl.innerHTML = swVisualHtml;
   // 5.페이지네이션 관련(코딩으로 생성한 li태그 저장)
   const swVisualPgLi = document.querySelectorAll(".sw-visual-pg-list > li");
-  console.log(swVisualPgLi);
+  // console.log(swVisualPgLi);
 
   var swiper = new Swiper(".sw-visual", {
     effect: "fade",
@@ -157,5 +166,35 @@ window.onload = function () {
   const businessModal = document.querySelector(".business-modal");
   businessModal.addEventListener("click", function () {
     businessModal.style.display = "none";
+  });
+  // 위로가기 스크롤바 구현
+  const gotop = document.querySelector(".gotop");
+  gotop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  // footer의 상단 위치 픽셀값 파악
+  let footer = document.querySelector(".footer");
+  let footerY = footer.offsetTop;
+  let waypoint_footer = new Waypoint({
+    element: document.querySelector(".footer"),
+    handler: function (direction) {
+      if (direction === "down") {
+        gotop.classList.add("active-footer");
+      } else {
+        gotop.classList.remove("active-footer");
+      }
+    },
+    offset: "95%",
+  });
+  let waypoint_service = new Waypoint({
+    element: document.querySelector(".service"),
+    handler: function (direction) {
+      if (direction === "down") {
+        gotop.classList.add("active");
+      } else {
+        gotop.classList.remove("active");
+      }
+    },
+    offset: "80%",
   });
 };
