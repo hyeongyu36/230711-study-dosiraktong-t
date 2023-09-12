@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://230711-study-dosiraktong-t.vercel.app
+
+# Sitemaps
+Sitemap: https://230711-study-dosiraktong-t.vercel.app/sitemap.xml
